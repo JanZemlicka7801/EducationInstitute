@@ -13,6 +13,18 @@ public class Student : User
         StudentModules = new List<Module>();
     }
 
+    public int CalculateCredits()
+    {
+        int totalCredits = 0;
+
+        foreach (var Module in StudentModules)
+        {
+            totalCredits += Module.Credits;
+        }
+        
+        return totalCredits/StudentModules.Count;
+    }
+
     public void AddModule(Module module)
     {
         StudentModules.Add(module);
