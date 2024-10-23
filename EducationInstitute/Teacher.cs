@@ -1,6 +1,6 @@
 ﻿namespace EducationInstitute;
 
-public class Teacher : User
+public class Teacher : User, IEmployee
 {
     private int DegreeLevel { get; set; }
     private DateTime StartDate { get; set; }
@@ -15,6 +15,11 @@ public class Teacher : User
     {
         DegreeLevel = 0;
         StartDate = DateTime.Today;
+    }
+
+    public int GetSalary()
+    {
+        return 50000;
     }
 
     public override string ToString()

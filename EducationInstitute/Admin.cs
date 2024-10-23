@@ -1,6 +1,6 @@
 ﻿namespace EducationInstitute;
 
-public class Admin : User
+public class Admin : User, IEmployee
 {
     private string Department { get; set; }
     private DateTime StartDate { get; set; }
@@ -15,6 +15,11 @@ public class Admin : User
     {
         Department = "department";
         StartDate = DateTime.Today;
+    }
+    
+    public int GetSalary()
+    {
+        return 40000;
     }
 
     public override string ToString()
