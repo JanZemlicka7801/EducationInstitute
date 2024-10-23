@@ -2,13 +2,21 @@
 
 public class Teacher : User, IEmployee
 {
-    private int DegreeLevel { get; set; }
+
+    public enum DegreeLevel
+    {
+        Degree,
+        HDip,
+        Masters,
+        PhD 
+    }
+    public DegreeLevel Degree { get; set; }
     private DateTime StartDate { get; set; }
     private List<Module> TeacherModules { get; set; }
 
-    public Teacher(string userId, string name, string email, int degreeLevel, DateTime startDate) : base(userId, name, email)
+    public Teacher(string userId, string name, string email, DegreeLevel degreeLevel, DateTime startDate) : base(userId, name, email)
     {
-        DegreeLevel = degreeLevel;
+        Degree = degreeLevel;
         StartDate = startDate;
         TeacherModules = new List<Module>();
     }
@@ -39,6 +47,6 @@ public class Teacher : User, IEmployee
         }
         
         return
-            $"{base.ToString()}, {nameof(DegreeLevel)}: {DegreeLevel}, {nameof(StartDate)}: {StartDate}, {moduleList}";
+            $"{base.ToString()}, {nameof(DegreeLevel)}: {Degree}, {nameof(StartDate)}: {StartDate}, {moduleList}";
     }
 }
