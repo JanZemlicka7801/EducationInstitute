@@ -2,13 +2,15 @@
 
 public class User
 {
-    private string UserId {get; set;}
+    private static int _userId = 0;
+    
+    private int UserId {get; set;}
     private string Name {get; set;}
     private string Email {get; set;}
 
-    protected User(string userId, string name, string email)
+    protected User( string name, string email)
     {
-        UserId = userId;
+        UserId = _userId++;
         Name = name;
         Email = email;
     }

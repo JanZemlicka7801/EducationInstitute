@@ -7,7 +7,7 @@ public class Student : User
     private List<Module> StudentModules { get; set; }
     public bool IsMature { get; set; }
 
-    public Student(string userId, string name, string email, string courseTitle, int currentYear, bool isMature) : base(userId, name, email)
+    public Student(string name, string email, string courseTitle, int currentYear, bool isMature) : base(name, email)
     {
         CourseTitle = courseTitle;
         CurrentYear = currentYear;

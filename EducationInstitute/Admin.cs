@@ -5,7 +5,7 @@ public class Admin : User, IEmployee
     private string Department { get; set; }
     private DateTime StartDate { get; set; }
 
-    public Admin(string userId, string name, string email, string department, DateTime startDate) : base(userId, name, email)
+    public Admin(string name, string email, string department, DateTime startDate) : base(name, email)
     {
         Department = department;
         StartDate = startDate;
