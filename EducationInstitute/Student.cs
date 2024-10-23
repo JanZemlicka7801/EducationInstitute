@@ -11,12 +11,6 @@ public class Student : User
         CurrentYear = currentYear;
     }
 
-    public Student()
-    {
-        CourseTitle = "null";
-        CurrentYear = 0000;
-    }
-
     public override string ToString()
     {
         return $"{base.ToString()}, {nameof(CourseTitle)}: {CourseTitle}, {nameof(CurrentYear)}: {CurrentYear}";

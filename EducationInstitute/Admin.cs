@@ -10,12 +10,6 @@ public class Admin : User, IEmployee
         Department = department;
         StartDate = startDate;
     }
-
-    public Admin()
-    {
-        Department = "department";
-        StartDate = DateTime.Today;
-    }
     
     public int GetSalary()
     {

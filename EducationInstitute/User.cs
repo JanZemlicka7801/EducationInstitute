@@ -12,13 +12,6 @@ public class User
         Name = name;
         Email = email;
     }
-
-    protected User()
-    {
-        UserId = "D00000000";
-        Name = "name";
-        Email = "D00000000@institute.com";
-    }
     
     public override string ToString()
     {

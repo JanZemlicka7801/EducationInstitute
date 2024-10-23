@@ -11,12 +11,6 @@ public class Teacher : User, IEmployee
         StartDate = startDate;
     }
 
-    public Teacher()
-    {
-        DegreeLevel = 0;
-        StartDate = DateTime.Today;
-    }
-
     public int GetSalary()
     {
         return 50000;
