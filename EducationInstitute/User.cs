@@ -6,14 +6,14 @@ public class User
     private string Name {get; set;}
     private string Email {get; set;}
 
-    public User(string userId, string name, string email)
+    protected User(string userId, string name, string email)
     {
         UserId = userId;
         Name = name;
         Email = email;
     }
 
-    public User()
+    protected User()
     {
         UserId = "D00000000";
         Name = "name";
