@@ -5,21 +5,23 @@ public class Student : User
     private string CourseTitle { get; set; }
     private int CurrentYear { get; set; }
     private List<Module> StudentModules { get; set; }
+    public bool IsMature { get; set; }
 
-    public Student(string userId, string name, string email, string courseTitle, int currentYear) : base(userId, name, email)
+    public Student(string userId, string name, string email, string courseTitle, int currentYear, bool isMature) : base(userId, name, email)
     {
         CourseTitle = courseTitle;
         CurrentYear = currentYear;
         StudentModules = new List<Module>();
+        IsMature = isMature;
     }
 
     public int CalculateCredits()
     {
         int totalCredits = 0;
 
-        foreach (var Module in StudentModules)
+        foreach (var module in StudentModules)
         {
-            totalCredits += Module.Credits;
+            totalCredits += module.Credits;
         }
         
         return totalCredits/StudentModules.Count;
