@@ -13,6 +13,11 @@ public class Teacher : User, IEmployee
         TeacherModules = new List<Module>();
     }
 
+    public void AddModule(Module module)
+    {
+        TeacherModules.Add(module);
+    }
+    
     public int GetSalary()
     {
         return 50000;
@@ -20,7 +25,20 @@ public class Teacher : User, IEmployee
 
     public override string ToString()
     {
+        string moduleList = "Modules: ";
+        if (TeacherModules.Count > 0)
+        {
+            foreach (Module module in TeacherModules)
+            {
+                moduleList += module + "; ";
+            }
+        }
+        else
+        {
+            moduleList += "No modules assigned.";
+        }
+        
         return
-            $"{base.ToString()}, {nameof(DegreeLevel)}: {DegreeLevel}, {nameof(StartDate)}: {StartDate}, {nameof(TeacherModules)}: {TeacherModules}";
+            $"{base.ToString()}, {nameof(DegreeLevel)}: {DegreeLevel}, {nameof(StartDate)}: {StartDate}, {moduleList}";
     }
 }

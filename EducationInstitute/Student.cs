@@ -13,9 +13,28 @@ public class Student : User
         StudentModules = new List<Module>();
     }
 
+    public void AddModule(Module module)
+    {
+        StudentModules.Add(module);
+    }
+
     public override string ToString()
     {
+        
+        string moduleList = "Modules: ";
+        if (StudentModules.Count > 0)
+        {
+            foreach (Module module in StudentModules)
+            {
+                moduleList += module + "; ";
+            }
+        }
+        else
+        {
+            moduleList += "No modules assigned.";
+        }
+        
         return
-            $"{base.ToString()}, {nameof(CourseTitle)}: {CourseTitle}, {nameof(CurrentYear)}: {CurrentYear}, {nameof(StudentModules)}: {StudentModules}";
+            $"{base.ToString()}, {nameof(CourseTitle)}: {CourseTitle}, {nameof(CurrentYear)}: {CurrentYear}, {moduleList}";
     }
 }
