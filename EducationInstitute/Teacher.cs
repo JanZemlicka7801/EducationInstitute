@@ -14,7 +14,7 @@ public class Teacher : User, IEmployee
     private DateTime StartDate { get; set; }
     private List<Module> TeacherModules { get; set; }
 
-    public Teacher(string name, string email, DegreeLevel degreeLevel, DateTime startDate) : base(name, email)
+    public Teacher(string name, DegreeLevel degreeLevel, DateTime startDate) : base(name)
     {
         Degree = degreeLevel;
         StartDate = startDate;
